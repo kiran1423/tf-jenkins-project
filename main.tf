@@ -23,7 +23,7 @@ resource "aws_vpc" "my-vpc" {
 # Create Web Public Subnet
 resource "aws_subnet" "web-subnet-1" {
   vpc_id                  = aws_vpc.my-vpc.id
-  cidr_block              = "10.0.1.0/28"
+  cidr_block              = "10.0.1.0/26"
   availability_zone       = "us-east-1a"
   map_public_ip_on_launch = true
 
@@ -34,7 +34,7 @@ resource "aws_subnet" "web-subnet-1" {
 
 resource "aws_subnet" "web-subnet-2" {
   vpc_id                  = aws_vpc.my-vpc.id
-  cidr_block              = "10.0.2.0/28"
+  cidr_block              = "10.0.2.0/26"
   availability_zone       = "us-east-1c"
   map_public_ip_on_launch = true
  tags = {
@@ -47,7 +47,7 @@ resource "aws_subnet" "web-subnet-2" {
 # Create Application Private Subnet
 resource "aws_subnet" "application-subnet-1" {
   vpc_id                  = aws_vpc.my-vpc.id
-  cidr_block              = "10.0.11.0/28"
+  cidr_block              = "10.0.11.0/26"
   availability_zone       = "us-east-1a"
   map_public_ip_on_launch = false
 
@@ -58,7 +58,7 @@ resource "aws_subnet" "application-subnet-1" {
 
 resource "aws_subnet" "application-subnet-2" {
   vpc_id                  = aws_vpc.my-vpc.id
-  cidr_block              = "10.0.12.0/28"
+  cidr_block              = "10.0.12.0/26"
   availability_zone       = "us-east-1c"
 
   tags = {
@@ -69,7 +69,7 @@ resource "aws_subnet" "application-subnet-2" {
 # Create Database Private Subnet
 resource "aws_subnet" "database-subnet-1" {
   vpc_id            = aws_vpc.my-vpc.id
-  cidr_block        = "10.0.21.0/28"
+  cidr_block        = "10.0.21.0/26"
   availability_zone = "us-east-1a"
 
   tags = {
@@ -79,7 +79,7 @@ resource "aws_subnet" "database-subnet-1" {
 
 resource "aws_subnet" "database-subnet-2" {
   vpc_id            = aws_vpc.my-vpc.id
-  cidr_block        = "10.0.22.0/28"
+  cidr_block        = "10.0.22.0/26"
   availability_zone = "us-east-1c"
 
   tags = {
@@ -89,7 +89,7 @@ resource "aws_subnet" "database-subnet-2" {
 
 resource "aws_subnet" "database-subnet" {
   vpc_id            = aws_vpc.my-vpc.id
-  cidr_block        = "10.0.3.0/28"
+  cidr_block        = "10.0.3.0/26"
   availability_zone = "us-east-1a"
 
   tags = {
